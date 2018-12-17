@@ -20,10 +20,8 @@ $(document).ready(function() {
     var url = 'https://www.google.com/search?q=' + searchTerm + '&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch' + params + '&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg';
     console.log('Before: ' + url);
     url = 'http://www.whateverorigin.org/get?method=raw&url=' + encodeURIComponent(url) + '&callback=?';
+  
     $.getJSON(url, function(data) {                    
-        // console.log(response.contents);
-        // $('#demo').html(response.contents);
-
         // This iframe sillyness is to put the html into a css sandbox (so it doesn't affect the main website)
         var iframe = $("#output")[0];//.html(data.contents);
         var doc = iframe.document;
